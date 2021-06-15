@@ -13,4 +13,6 @@ hammer = Weapon("Hammer", "Short", "Simple", "Hard Hitting", "Simple Movement", 
 hunting_horn = Weapon("Hunting Horn", "Short", "Complex", "Hard Hitting", "Simple Movement", "Utility")
 switch_axe = Weapon("Switch Axe", "Short", "Complex", "Hard Hitting", "Simple Movement", "Damage")
 light_bowgun = Weapon("Light Bowgun", "Long", "Simple", "Fast", "Mobile", "Utility")
-heavy_bowgun = Weapon("Heavy  Bowgun", "Long", "Simple", "Hard Hitting", "Simple Movemebt", "Damage")
+heavy_bowgun = Weapon("Heavy  Bowgun", "Long", "Simple", "Hard Hitting", "Simple Movement", "Damage")
+
+weapon_list = [bow, charge_blade, long_sword, insect_glaive, dual_blades, great_sword, sword_and_shield, lance, gunlance, hammer, hunting_horn, switch_axe, light_bowgun, heavy_bowgun]
