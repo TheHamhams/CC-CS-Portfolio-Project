@@ -7,9 +7,6 @@ speed = ""
 mobility = ""
 utility = ""
 
-result_array = []
-
-count = 0
 
 def program_start():
     response = input("""
@@ -19,8 +16,11 @@ def program_start():
 
     if response == "yes":
         ask_range()
-    else:
+    elif response == "no":
         exit_program()
+    else:
+        print("Please try again")
+        program_start()
 
 def ask_range():
     global wep_range
@@ -85,11 +85,11 @@ def ask_mobility():
     
     if response == '1':
         mobility = "Mobile"
-        ask_complexity()
+        ask_utility()
 
     elif response == '2':
         mobility = "Simple Movement"
-        ask_complexity()
+        ask_utility()
 
     elif response == '3':
         mobility = "Defensive"
@@ -117,7 +117,32 @@ def ask_utility():
         ask_utility()
 
 def results():
-    pass
+    result_array = [wep_range, complexity, speed, mobility, utility]
+    result = []
+    count_max = 0
+    i = 0
+
+    for weapon in weapon_list:
+        while i < len(weapon.array):
+            if weapon.array[i] == result_array[i]:
+                weapon.match_count += 1
+            i += 1
+        i = 0
+    
+    for weapon in weapon_list:
+        if weapon.match_count > count_max:
+            count_max = weapon.match_count
+    
+    for weapon in weapon_list:
+        if weapon.match_count == count_max:
+            result.append(weapon)
+
+
+    print("Your ideal weapons are:")
+    for weapon in result:
+        weapon.display()
+    
+    exit_program()
 
 def exit_program():
     print("Happy Hunting!")

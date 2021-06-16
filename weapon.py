@@ -6,6 +6,7 @@ class Weapon():
         self.speed = speed
         self.mobility = mobility
         self.utility = utility
+        self.match_count = 0
         self.array = [self.wep_range, self.complexity, self.speed, self.mobility, self.utility]
 
     def display(self):
