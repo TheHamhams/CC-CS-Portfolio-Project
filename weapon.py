@@ -7,3 +7,14 @@ class Weapon():
         self.mobility = mobility
         self.utility = utility
         self.array = [self.wep_range, self.complexity, self.speed, self.mobility, self.utility]
+
+    def diaplay(self):
+        print(f"""
+        Weapon: {self.wep_name}
+        Range: {self.wep_range} Range
+        Complexity: {self.complexity}
+        Speed: {self.speed}
+        Mobility: {self.mobility}
+        Utility: {self.utility}
+        
+        """)
